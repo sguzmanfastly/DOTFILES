@@ -14,7 +14,12 @@ lspconfig.docker_compose_language_service.setup({
 })
 
 lspconfig.omnisharp.setup({
-  cmd = { "dotnet", "/home/ivansegufer/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll" },
+  cmd = {
+    "dotnet",
+    "/home/ivansegufer/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll"
+  },
   enable_roslyn_analyzers = false,
-  enable_import_completion = true
+  enable_import_completion = true,
+  on_attach = on_attach,
+  capabilities = capabilities
 })

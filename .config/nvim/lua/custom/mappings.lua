@@ -2,6 +2,9 @@ local M = {}
 
 M.general = {
   n = {
+    ["gD"] = { "<cmd>lua vim.lsp.buf.declaration()<CR>", { noremap = true, silent = true }},
+    ["gd"] = { "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true }},
+
     ["<C-h>"] = { "<cmd> TmuxNavigateLeft <CR>", "window left" },
     ["<C-l>"] = { "<cmd> TmuxNavigateRight <CR>", "window right" },
     ["<C-j>"] = { "<cmd> TmuxNavigateDown <CR>", "window down" },
@@ -34,8 +37,7 @@ M.general = {
     ["<leader>dt"] = { function() require("dap").terminate() end, "Terminate" },
     ["<leader>dw"] = { function() require("dap.ui.widgets").hover() end, "Widgets" },
 
-    ["gD"] = { "<cmd>lua vim.lsp.buf.declaration()<CR>", { noremap = true, silent = true }},
-    ["gd"] = { "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true }}
+    ["<leader>."] = { "<cmd>lua vim.lsp.buf.code_action()<CR>", { noremap = true, silent = true }}
   }
 }
 
